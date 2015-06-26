@@ -4,9 +4,9 @@ describe "Sidekiq::Logging::Json" do
   describe "process_message" do
     subject { JSON.parse(Sidekiq::Logging::Json::Logger.new.call(severity, time, program_name, logentry)) }
     let(:logentry) { "Some random message" }
-    let(:message) { subject["@message"] }
-    let(:status) { subject["@status"] }
-    let(:run_time) { subject["@run_time"] }
+    let(:message) { subject["message"] }
+    let(:status) { subject["status"] }
+    let(:run_time) { subject["run_time"] }
     let(:severity) { "INFO" }
     let(:time) { Time.now }
     let(:program_name) { "RSpec" }
